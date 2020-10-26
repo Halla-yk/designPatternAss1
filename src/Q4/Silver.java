@@ -12,8 +12,8 @@ package Q4;
 public class Silver implements Color{
 
     @Override
-    public void fill() {
-        System.out.println("Silver");
+    public String fill() {
+       return "Silver";
     }
     
     

@@ -6,7 +6,6 @@
 package Q3;
 
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -25,13 +24,13 @@ import javafx.stage.Stage;
  * @author hala
  */
 public class Q3 extends Application {
-    
-     private Button buttonAdd, buttonShow, buttonClear;
+    private Button buttonAdd, buttonShow, buttonClear;
     private TextField textFieldId, textFieldName, textFieldType;
     private TextArea textArea;
+    
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        FlowPane pane = new FlowPane();
+    public void start(Stage primaryStage) {
+         FlowPane pane = new FlowPane();
         pane.setAlignment(Pos.CENTER);
         pane.setHgap(10);        
         textFieldId = new TextField();
@@ -68,16 +67,19 @@ public class Q3 extends Application {
         
         pane.getChildren().addAll(vBox1,vBox2);        
         Scene scene = new Scene(pane, 550,300);
-       // scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        //scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.setTitle("Prototype Design Pattern");
         primaryStage.show();
     }
+
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
         launch(args);
-        
     }
-    private class MyEventHandler implements EventHandler<ActionEvent>{
+      private class MyEventHandler implements EventHandler<ActionEvent>{
         
         @Override
         public void handle(ActionEvent event) {

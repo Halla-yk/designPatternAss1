@@ -12,8 +12,8 @@ package Q4;
 public class White implements Color{
 
     @Override
-    public void fill() {
-        System.out.println("White");
+    public String fill() {
+        return "white";
     }
     
 }

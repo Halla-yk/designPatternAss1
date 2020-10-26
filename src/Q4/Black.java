@@ -12,8 +12,8 @@ package Q4;
 public class Black implements Color{
 
     @Override
-    public void fill() {
-        System.out.println("Black"); //To change body of generated methods, choose Tools | Templates.
+    public String fill() {
+        return "Black"; //To change body of generated methods, choose Tools | Templates.
     }
     
 }

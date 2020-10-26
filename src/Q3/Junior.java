@@ -15,10 +15,11 @@ public class Junior extends Employee{
         super(id, name);
         this.type = "Junior";
     }
+
     
-     @Override
+    @Override
     public String Show() {
-        return "Junior: " + getId() + ", " + getName();
+        return "Junior";
     }
     
 }

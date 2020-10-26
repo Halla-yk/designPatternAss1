@@ -10,5 +10,5 @@ package Q4;
  * @author hala
  */
 public interface Color {
-    void fill();
+    String fill();
 }

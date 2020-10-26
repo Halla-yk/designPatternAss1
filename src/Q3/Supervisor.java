@@ -10,14 +10,16 @@ package Q3;
  * @author hala
  */
 public class Supervisor extends Employee{
-
-    public Supervisor(String id, String name) {
+     public Supervisor(String id, String name) {
         super(id, name);
         this.type = "Supervisor";
     }
-     @Override
+
+    @Override
     public String Show() {
-        return "Supervisor: " + getId() + ", " + getName();
+        return "Supervisor";
     }
+
+   
     
 }

@@ -12,18 +12,20 @@ import java.util.logging.Logger;
  *
  * @author hala
  */
-public abstract class Employee implements Cloneable{
-    
+public abstract class  Employee implements Cloneable{
     private String id;
     protected String type;
     private String name;
-
-    public Employee(String id, String name) {
+    
+     public Employee(String id, String name) {
         this.id = id;
         this.name = name;
     }
 
-  
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public String getId() {
         return id;
     }
@@ -35,10 +37,9 @@ public abstract class Employee implements Cloneable{
     public String getName() {
         return name;
     }
-public abstract String Show();
-   
-  
-     @Override
+
+    public abstract String Show();
+      @Override
     protected Object clone() {
         Object clone = null;
         try { 
@@ -48,5 +49,4 @@ public abstract String Show();
         }
         return clone;
     }
-    
 }

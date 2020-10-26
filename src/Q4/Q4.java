@@ -25,7 +25,7 @@ import javafx.stage.Stage;
  */
 public class Q4 extends Application {
      
-      private Button buttonShow, buttonClear;
+      private Button buttonCar, buttonColor;
     private TextField textField1, textField2;
     private TextArea textArea;
     
@@ -43,17 +43,17 @@ public class Q4 extends Application {
         VBox vBox1 = new VBox();
         vBox1.setSpacing(10);
         vBox1.setAlignment(Pos.CENTER);
-        vBox1.getChildren().addAll(textField1, textField2);
+        vBox1.getChildren().addAll(textField1);
         
-        buttonShow = new Button("Show");
-        buttonClear = new Button("Clear");
+        buttonCar = new Button("Car");
+        buttonColor = new Button("Color");
         HBox hBox1 = new HBox();
         hBox1.setSpacing(10);
         hBox1.setAlignment(Pos.CENTER);
-        hBox1.getChildren().addAll(buttonShow, buttonClear);
+        hBox1.getChildren().addAll(buttonCar, buttonColor);
         MyEventHandler myEventHandler = new MyEventHandler();
-        buttonShow.setOnAction(myEventHandler);
-        buttonClear.setOnAction(myEventHandler);
+        buttonCar.setOnAction(myEventHandler);
+        buttonColor.setOnAction(myEventHandler);
         textArea = new TextArea();
         textArea.setMaxWidth(300);
         VBox vBox2 = new VBox();
@@ -79,11 +79,18 @@ public class Q4 extends Application {
         
         @Override
         public void handle(ActionEvent event) {
-            if(event.getSource() == buttonShow){
-               AbstractFactory carFactory  = FactoryProducer.getFactory("");
-            }
-            else if(event.getSource() == buttonClear){
+            if(event.getSource() == buttonCar){
                 textArea.setText("");
+               AbstractFactory carFactory  = FactoryProducer.getFactory("Car");
+               Car car  =carFactory.getCar(textField1.getText());
+               textArea.setText(car.Show());
+               
+            }
+            else if(event.getSource() == buttonColor){
+                textArea.setText("");
+                AbstractFactory colorFactory  = FactoryProducer.getFactory("Color");
+               Color color  =colorFactory.getColor(textField1.getText());
+               textArea.setText(color.fill());
             }
         }        
     } 
